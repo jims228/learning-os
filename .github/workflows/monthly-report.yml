@@ -1,0 +1,75 @@
+name: Monthly Report Reminder
+
+on:
+  schedule:
+    - cron: '0 9 1 * *'  # 毎月1日 午前9時（UTC）
+  workflow_dispatch:
+
+jobs:
+  create-monthly-report:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Get month info
+        id: month
+        run: |
+          MONTH=$(date +%Y-%m)
+          DATE=$(date +%Y-%m-%d)
+          echo "month=$MONTH" >> $GITHUB_OUTPUT
+          echo "date=$DATE" >> $GITHUB_OUTPUT
+
+      - name: Create monthly report file
+        run: |
+          MONTH="${{ steps.month.outputs.month }}"
+          DATE="${{ steps.month.outputs.date }}"
+          FILE="reviews/monthly/${MONTH}.md"
+
+          if [ ! -f "$FILE" ]; then
+            cat > "$FILE" << EOF
+          # 月次レポート: ${MONTH}
+
+          クロード作成: ${DATE}
+
+          ---
+
+          ## 今月の学習サマリー
+
+          | 分野 | 学習日数 | メモ |
+          |------|---------|------|
+          | 英語 |  |  |
+          | 数学 |  |  |
+          | BCI  |  |  |
+          | 宇宙 |  |  |
+
+          ---
+
+          ## 目標への進捗
+
+          | 目標 | 先月末 | 今月末 | 変化 |
+          |------|--------|--------|------|
+          | TOEFL スコア | — | — | — |
+          | 英語継続日数 | — | — | — |
+
+          ---
+
+          ## クロードからの月次フィードバック
+
+          （次回セッションでクロードが記入）
+
+          ---
+
+          ## 来月の方針
+
+          （クロードが設計）
+          EOF
+            echo "Created $FILE"
+          fi
+
+      - name: Commit if new file
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add reviews/monthly/
+          git diff --staged --quiet || git commit -m "auto: 月次レポートファイル作成 ${{ steps.month.outputs.month }}"
+          git push || true

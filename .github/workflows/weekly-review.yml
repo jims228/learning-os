@@ -1,0 +1,74 @@
+name: Weekly Review Reminder
+
+on:
+  schedule:
+    - cron: '0 9 * * 1'  # 毎週月曜日 午前9時（UTC）= 日本時間18時
+  workflow_dispatch:
+
+jobs:
+  create-weekly-review:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Get week info
+        id: week
+        run: |
+          WEEK=$(date +%Y-W%V)
+          DATE=$(date +%Y-%m-%d)
+          echo "week=$WEEK" >> $GITHUB_OUTPUT
+          echo "date=$DATE" >> $GITHUB_OUTPUT
+
+      - name: Create weekly review file
+        run: |
+          WEEK="${{ steps.week.outputs.week }}"
+          DATE="${{ steps.week.outputs.date }}"
+          FILE="reviews/weekly/${WEEK}.md"
+
+          if [ ! -f "$FILE" ]; then
+            cat > "$FILE" << EOF
+          # 週次レビュー: ${WEEK}
+
+          クロード作成: ${DATE}
+
+          ---
+
+          ## 先週の振り返り
+
+          ### やったこと
+          - 英語:
+          - 数学:
+          - BCI/専門知識:
+
+          ### 学習時間（合計）
+          - 英語: h
+          - 数学: h
+          - BCI: h
+
+          ---
+
+          ## クロードからのフィードバック
+
+          （次回セッションでクロードが記入）
+
+          ---
+
+          ## 来週の計画
+
+          ### 優先タスク
+          1.
+          2.
+          3.
+          EOF
+            echo "Created $FILE"
+          else
+            echo "$FILE already exists"
+          fi
+
+      - name: Commit if new file
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add reviews/weekly/
+          git diff --staged --quiet || git commit -m "auto: 週次レビューファイル作成 ${{ steps.week.outputs.week }}"
+          git push || true
