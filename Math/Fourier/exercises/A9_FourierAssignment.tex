@@ -1,0 +1,113 @@
+%\documentclass[12pt]{article}
+\documentclass[12pt]{scrartcl}
+\title{AY2026 MA05 Fourier Analysis Assignment 1}
+\nonstopmode
+%\usepackage[utf-8]{inputenc}
+\usepackage{graphicx} % Required for including pictures
+\usepackage[figurename=Figure]{caption}
+\usepackage{float}    % For tables and other floats
+\usepackage{verbatim} % For comments and other
+\usepackage{amsmath}  % For math
+\usepackage{amssymb}  % For more math
+\usepackage{fullpage} % Set margins and place page numbers at bottom center
+\usepackage{paralist} % paragraph spacing
+\usepackage{listings} % For source code
+\usepackage{subfig}   % For subfigures
+%\usepackage{physics}  % for simplified dv, and
+\usepackage{enumitem} % useful for itemization
+\usepackage{siunitx}  % standardization of si units
+
+\usepackage{tikz,bm} % Useful for drawing plots
+%\usepackage{tikz-3dplot}
+\usepackage{circuitikz}
+\usepackage{hyperref} % For \url
+
+%%% Colours used in field vectors and propagation direction
+\definecolor{mycolor}{rgb}{1,0.2,0.3}
+\definecolor{brightgreen}{rgb}{0.4, 1.0, 0.0}
+\definecolor{britishracinggreen}{rgb}{0.0, 0.26, 0.15}
+\definecolor{cadmiumgreen}{rgb}{0.0, 0.42, 0.24}
+\definecolor{ceruleanblue}{rgb}{0.16, 0.32, 0.75}
+\definecolor{darkelectricblue}{rgb}{0.33, 0.41, 0.47}
+\definecolor{darkpowderblue}{rgb}{0.0, 0.2, 0.6}
+\definecolor{darktangerine}{rgb}{1.0, 0.66, 0.07}
+\definecolor{emerald}{rgb}{0.31, 0.78, 0.47}
+\definecolor{palatinatepurple}{rgb}{0.41, 0.16, 0.38}
+\definecolor{pastelviolet}{rgb}{0.8, 0.6, 0.79}
+\begin{document}
+
+\begin{center}
+    \hrule
+    \vspace{.4cm}
+    {\textbf { \large AY2026 MA05 Fourier Analysis}}
+\end{center}
+% ====== TODO =======
+%Please input your Name and Student ID below
+{\textbf{Name:}\ Akito Shingo \hspace{\fill} \textbf{Deadline:} 17:00, Friday, May 22, 2026   \\
+{ \textbf{Student ID:}} \ s1330096 \hspace{\fill} \textbf{Assignment:} 9 \\}
+    \hrule
+
+\begin{enumerate}
+
+\item
+Find the Discrete Fourier Transform by using Fast Fourier Transform for
+
+$\{f(0),f(1),f(2),f(3)\}=\{0, 2, 3, 6\}$, $N=4$.
+
+\textbf{Solution:} \\
+% ====== TODO =======
+% Please write your solution here.
+
+The $N$-point DFT is defined by
+\[
+F(k)=\sum_{n=0}^{N-1} f(n)\,W_N^{\,nk},
+\qquad W_N=e^{-2\pi i/N},\qquad k=0,1,\dots,N-1 .
+\]
+For $N=4$ the twiddle factor is $W_4=e^{-i\pi/2}=-i$, so
+\[
+W_4^{0}=1,\qquad W_4^{1}=-i,\qquad W_4^{2}=-1,\qquad W_4^{3}=i .
+\]
+
+\textbf{Step 1: split into even- and odd-indexed samples (decimation in time).}
+\[
+\text{even: }\{f(0),f(2)\}=\{0,3\},\qquad
+\text{odd: }\{f(1),f(3)\}=\{2,6\}.
+\]
+
+\textbf{Step 2: the two 2-point DFTs.}
+\begin{align*}
+A(0)&=f(0)+f(2)=0+3=3, & A(1)&=f(0)-f(2)=0-3=-3,\\
+B(0)&=f(1)+f(3)=2+6=8, & B(1)&=f(1)-f(3)=2-6=-4.
+\end{align*}
+
+\textbf{Step 3: combine with the butterfly} $F(k)=A(k)+W_4^{k}B(k)$,
+$\;F(k+2)=A(k)-W_4^{k}B(k)$ for $k=0,1$:
+\begin{align*}
+F(0)&=A(0)+W_4^{0}B(0)=3+(1)(8)=11,\\
+F(1)&=A(1)+W_4^{1}B(1)=-3+(-i)(-4)=-3+4i,\\
+F(2)&=A(0)-W_4^{0}B(0)=3-(1)(8)=-5,\\
+F(3)&=A(1)-W_4^{1}B(1)=-3-(-i)(-4)=-3-4i.
+\end{align*}
+
+\textbf{Result.}
+\[
+\boxed{\{F(0),F(1),F(2),F(3)\}=\{\,11,\ -3+4i,\ -5,\ -3-4i\,\}}
+\]
+
+\emph{Check (direct DFT).} $F(0)=0+2+3+6=11$, and
+$F(1)=0+2(-i)+3(-1)+6(i)=-3+4i$, $F(2)=0+2(-1)+3(1)+6(-1)=-5$,
+$F(3)=0+2(i)+3(-1)+6(-i)=-3-4i$, which agree with the FFT result.
+Since $f$ is real, $F(3)=\overline{F(1)}$ as expected.
+
+\\
+Notice: \\
+(1) Please submit your assignments according to the Homework Guidelines.
+
+\url{https://web-ext.u-aizu.ac.jp/~xiangli/teaching/MA05/Guidelines.pdf}
+
+(2) Write your Email title as "2026-A\{Assignment number\}-\{Your Student ID\}-\{Your Name\}".
+
+
+\end{enumerate}
+
+\end{document}

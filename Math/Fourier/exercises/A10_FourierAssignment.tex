@@ -1,0 +1,124 @@
+%\documentclass[12pt]{article}
+\documentclass[12pt]{scrartcl}
+\title{AY2026 MA05 Fourier Analysis Assignment 1}
+\nonstopmode
+%\usepackage[utf-8]{inputenc}
+\usepackage{graphicx} % Required for including pictures
+\usepackage[figurename=Figure]{caption}
+\usepackage{float}    % For tables and other floats
+\usepackage{verbatim} % For comments and other
+\usepackage{amsmath}  % For math
+\usepackage{amssymb}  % For more math
+\usepackage{fullpage} % Set margins and place page numbers at bottom center
+\usepackage{paralist} % paragraph spacing
+\usepackage{listings} % For source code
+\usepackage{subfig}   % For subfigures
+%\usepackage{physics}  % for simplified dv, and
+\usepackage{enumitem} % useful for itemization
+\usepackage{siunitx}  % standardization of si units
+
+\usepackage{tikz,bm} % Useful for drawing plots
+%\usepackage{tikz-3dplot}
+\usepackage{circuitikz}
+\usepackage{hyperref} % For \url
+
+%%% Colours used in field vectors and propagation direction
+\definecolor{mycolor}{rgb}{1,0.2,0.3}
+\definecolor{brightgreen}{rgb}{0.4, 1.0, 0.0}
+\definecolor{britishracinggreen}{rgb}{0.0, 0.26, 0.15}
+\definecolor{cadmiumgreen}{rgb}{0.0, 0.42, 0.24}
+\definecolor{ceruleanblue}{rgb}{0.16, 0.32, 0.75}
+\definecolor{darkelectricblue}{rgb}{0.33, 0.41, 0.47}
+\definecolor{darkpowderblue}{rgb}{0.0, 0.2, 0.6}
+\definecolor{darktangerine}{rgb}{1.0, 0.66, 0.07}
+\definecolor{emerald}{rgb}{0.31, 0.78, 0.47}
+\definecolor{palatinatepurple}{rgb}{0.41, 0.16, 0.38}
+\definecolor{pastelviolet}{rgb}{0.8, 0.6, 0.79}
+\begin{document}
+
+\begin{center}
+    \hrule
+    \vspace{.4cm}
+    {\textbf { \large AY2026 MA05 Fourier Analysis}}
+\end{center}
+% ====== TODO =======
+%Please input your Name and Student ID below
+{\textbf{Name:}\ Akito Shingo \hspace{\fill} \textbf{Deadline:} 17:00, Monday, May 25, 2026   \\
+{ \textbf{Student ID:}} \ s1330096 \hspace{\fill} \textbf{Assignment:} 10 \\}
+    \hrule
+
+\begin{enumerate}
+
+\item
+Evaluate the Laplace transform of the given functions.
+\begin{enumerate}
+\item
+$f(t)=u(t-1)-t+1$
+\item
+$f(t)=e^{2t}u(t-2)$
+\end{enumerate}
+
+\textbf{Solution:} \\
+% ====== TODO =======
+% Please write your solution here.
+
+We use the standard transforms
+\[
+\mathcal{L}\{u(t-a)\}=\frac{e^{-as}}{s},\qquad
+\mathcal{L}\{1\}=\frac1s,\qquad
+\mathcal{L}\{t\}=\frac{1}{s^{2}},
+\]
+and the second shifting theorem (shift on the $t$-axis)
+\[
+\mathcal{L}\{u(t-a)\,g(t-a)\}=e^{-as}\,G(s),\qquad G(s)=\mathcal{L}\{g(t)\}.
+\]
+
+\textbf{(a)} Write $-t+1=-(t-1)$, so $f(t)=u(t-1)-(t-1)$. Term by term,
+\begin{align*}
+\mathcal{L}\{u(t-1)\}&=\frac{e^{-s}}{s},\\
+\mathcal{L}\{t-1\}&=\frac{1}{s^{2}}-\frac1s .
+\end{align*}
+Therefore
+\[
+\boxed{\;F(s)=\frac{e^{-s}}{s}+\frac1s-\frac{1}{s^{2}}\;}
+\]
+
+\textbf{(b)} To match the form $u(t-2)\,g(t-2)$, rewrite the exponential about $t=2$:
+\[
+e^{2t}=e^{2(t-2)+4}=e^{4}\,e^{2(t-2)},
+\qquad\text{so}\qquad
+f(t)=e^{4}\,e^{2(t-2)}\,u(t-2).
+\]
+Here $a=2$ and $g(t)=e^{2t}$ with $G(s)=\dfrac{1}{s-2}$. By the second shifting theorem,
+\[
+\boxed{\;F(s)=e^{4}\cdot e^{-2s}\cdot\frac{1}{s-2}=\frac{e^{\,4-2s}}{s-2}\;}\qquad(s>2).
+\]
+(Check by definition: $\displaystyle\int_{2}^{\infty}e^{2t}e^{-st}\,dt=\frac{e^{2(2-s)}}{s-2}=\frac{e^{4-2s}}{s-2}$.)
+
+\item
+Evaluate the inverse Laplace transform of the given function.\\
+$\mathcal{L}^{-1}[\frac{e^{-s}}{s^2}]$
+
+\textbf{Solution:} \\
+% ====== TODO =======
+% Please write your solution here.
+
+Since $\mathcal{L}^{-1}\!\left\{\dfrac{1}{s^{2}}\right\}=t$, apply the inverse second
+shifting theorem $\mathcal{L}^{-1}\{e^{-as}F(s)\}=u(t-a)\,f(t-a)$ with $a=1$ and $f(t)=t$:
+\[
+\boxed{\;\mathcal{L}^{-1}\!\left\{\frac{e^{-s}}{s^{2}}\right\}=(t-1)\,u(t-1)
+=\begin{cases}0,&t<1,\\[2pt] t-1,&t\ge 1.\end{cases}}
+\]
+
+\\
+Notice: \\
+(1) Please submit your assignments according to the Homework Guidelines.
+
+\url{https://web-ext.u-aizu.ac.jp/~xiangli/teaching/MA05/Guidelines.pdf}
+
+(2) Write your Email title as "2026-A\{Assignment number\}-\{Your Student ID\}-\{Your Name\}".
+
+
+\end{enumerate}
+
+\end{document}
