@@ -20,9 +20,9 @@
 |---|---|---|
 | 01 | Example 1.1 | 済 |
 | 01 | Theorem 1.1 | 済 |
-| 01 | Orthogonality properties of the trigonometric system | 次 |
+| 01 | Orthogonality properties of the trigonometric system | 済 |
 | 01 | Example 1.2 | 済 |
-| 01 | Example 1.3 | 未 |
+| 01 | Example 1.3 | 次 |
 | 02 | Example 2.2 | 未 |
 | 02 | Example 2.4 | 未 |
 | 02 | Transformation Exercise of Lecture 2 | 未 |
@@ -68,5 +68,5 @@
 
 ## 次にやること
 
-1. Lecture 1 の三角関数系の直交性を確認する。
-2. Lecture 1 Example 1.3 のフーリエ級数を確認する。
+1. Lecture 1 Example 1.3 のフーリエ級数を確認する。
+2. Lecture 2 のフーリエ係数計算へ進む。
