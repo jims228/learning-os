@@ -43,8 +43,8 @@
 | 07 | Example 7.1 | 済 |
 | 07 | Theorem 7.2 and its Proof | 済 |
 | 07 | Example 7.3 | 済 |
-| 07 | Theorem 7.3 | 次 |
-| 07 | Example 7.5 | 未 |
+| 07 | Theorem 7.3 | 済 |
+| 07 | Example 7.5 | 次 |
 | 07 | Theorem 7.4 | 未 |
 | 08 | Example 8.2 | 済 |
 | 08 | Example 8.3 | 済 |
@@ -68,7 +68,7 @@
 
 ## 次にやること
 
-1. Theorem 7.3 の \(s\)-軸シフトを確認する。
-2. Example 7.5 の逆ラプラスを確認する。
-3. Assignment 10 の単位ステップ・時間シフトに進む。
+1. Example 7.5 の逆ラプラスを確認する。
+2. Assignment 10 の単位ステップ・時間シフトに進む。
+3. Theorem 7.4 の微分のラプラス変換を確認する。
 4. そのあと Lecture 1-4 のフーリエ級数へ戻る。
