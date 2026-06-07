@@ -39,7 +39,7 @@
 | 05 | Example 5.5 | 済 |
 | 06 | Theorem 6.1 | 済 |
 | 06 | Example 6.3 | 済 |
-| 06 | Example 6.4 | 未 |
+| 06 | Example 6.4 | 済 |
 | 07 | Example 7.1 | 済 |
 | 07 | Theorem 7.2 and its Proof | 済 |
 | 07 | Example 7.3 | 済 |
@@ -68,5 +68,7 @@
 
 ## 次にやること
 
-1. Lecture 6 Example 6.4 へ進む。
-2. Review 指定範囲の総復習に入る。
+Review 指定範囲は一周完了。
+
+1. 試験で点にしやすい順に総復習する。
+2. DFT / FFT、ラプラス変換、フーリエ級数、フーリエ変換の順に演習する。
