@@ -27,7 +27,7 @@
 | 02 | Example 2.4 | 済 |
 | 02 | Transformation Exercise of Lecture 2 | 済 |
 | 02 | Theorem 2.2 | 済 |
-| 02 | Example 2.6 | 未 |
+| 02 | Example 2.6 | 済 |
 | 03 | Theorem 3.1 | 未 |
 | 03 | Example 3.1 | 未 |
 | 03 | Example 3.2 | 未 |
@@ -68,5 +68,5 @@
 
 ## 次にやること
 
-1. Lecture 2 Example 2.6 へ進む。
+1. Lecture 3 Theorem 3.1 へ進む。
 2. Lecture 3-4 のフーリエ級数の派生トピックを確認する。
