@@ -52,9 +52,9 @@
 | 09 | Example 9.1 | 済 |
 | 09 | Example 9.2 | 済 |
 | 10 | Example 10.1 | 済 |
-| 10 | Theorem 10.1 | 未 |
-| 10 | Example 10.3 | 未 |
-| 10 | Example 10.4 | 未 |
+| 10 | Theorem 10.1 | 済 |
+| 10 | Example 10.3 | 済 |
+| 10 | Example 10.4 | 済 |
 | 10 | Theorem 10.2 and its Proof | 未 |
 
 ## 課題問題で確認する範囲
@@ -68,5 +68,5 @@
 
 ## 次にやること
 
-1. Lecture 10 Theorem 10.1 と Example 10.3, 10.4 の時間シフトを確認する。
-2. そのあと Lecture 10 Theorem 10.2 の畳み込みを確認する。
+1. Lecture 10 Theorem 10.2 の畳み込みを確認する。
+2. そのあと Lecture 1-4 のフーリエ級数へ戻る。
