@@ -31,7 +31,7 @@
 | 03 | Theorem 3.1 | 済 |
 | 03 | Example 3.1 | 済 |
 | 03 | Example 3.2 | 済 |
-| 04 | Theorem 4.1 | 未 |
+| 04 | Theorem 4.1 | 済 |
 | 04 | Example 4.1 | 未 |
 | 05 | Example 5.3 | 未 |
 | 05 | Theorem 5.2 and its Proof | 未 |
@@ -68,5 +68,5 @@
 
 ## 次にやること
 
-1. Lecture 4 Theorem 4.1 へ進む。
+1. Lecture 4 Example 4.1 へ進む。
 2. Lecture 4 の複素フーリエ級数を確認する。
