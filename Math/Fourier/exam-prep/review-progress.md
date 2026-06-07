@@ -35,7 +35,7 @@
 | 04 | Example 4.1 | 済 |
 | 05 | Example 5.3 | 済 |
 | 05 | Theorem 5.2 and its Proof | 済 |
-| 05 | Theorem 5.3 | 未 |
+| 05 | Theorem 5.3 | 済 |
 | 05 | Example 5.5 | 未 |
 | 06 | Theorem 6.1 | 未 |
 | 06 | Example 6.3 | 未 |
@@ -68,5 +68,5 @@
 
 ## 次にやること
 
-1. Lecture 5 Theorem 5.3 へ進む。
+1. Lecture 5 Example 5.5 へ進む。
 2. Lecture 5-6 のフーリエ変換と畳み込みを確認する。
