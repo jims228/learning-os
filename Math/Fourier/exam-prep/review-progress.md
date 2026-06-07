@@ -30,7 +30,7 @@
 | 02 | Example 2.6 | 済 |
 | 03 | Theorem 3.1 | 済 |
 | 03 | Example 3.1 | 済 |
-| 03 | Example 3.2 | 未 |
+| 03 | Example 3.2 | 済 |
 | 04 | Theorem 4.1 | 未 |
 | 04 | Example 4.1 | 未 |
 | 05 | Example 5.3 | 未 |
@@ -68,5 +68,5 @@
 
 ## 次にやること
 
-1. Lecture 3 Example 3.2 へ進む。
-2. Lecture 3-4 のフーリエ級数の派生トピックを確認する。
+1. Lecture 4 Theorem 4.1 へ進む。
+2. Lecture 4 の複素フーリエ級数を確認する。
