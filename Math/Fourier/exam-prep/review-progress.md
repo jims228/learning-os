@@ -55,7 +55,7 @@
 | 10 | Theorem 10.1 | 済 |
 | 10 | Example 10.3 | 済 |
 | 10 | Example 10.4 | 済 |
-| 10 | Theorem 10.2 and its Proof | 未 |
+| 10 | Theorem 10.2 and its Proof | 済 |
 
 ## 課題問題で確認する範囲
 
@@ -68,5 +68,5 @@
 
 ## 次にやること
 
-1. Lecture 10 Theorem 10.2 の畳み込みを確認する。
-2. そのあと Lecture 1-4 のフーリエ級数へ戻る。
+1. Lecture 1-4 のフーリエ級数へ戻る。
+2. Lecture 5-6 のフーリエ変換・畳み込みを最低限確認する。
