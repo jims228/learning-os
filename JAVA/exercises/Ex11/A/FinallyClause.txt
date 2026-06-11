@@ -1,0 +1,44 @@
+プログラムの実行結果:
+Main program starts.
+(1) No exception
+(1) in finally clause
+(2) Exception occurred
+(2) in finally clause
+(3) in finally clause
+Main program ends.
+
+
+質問1: なぜプログラムは下記の 2 行を出力するのか?
+(2) Exception occurred
+(2) in finally clause
+
+解答:
+count が 2 になったとき、文 "if (++count == 2) throw new Exception();" が Exception
+を throw する。この瞬間に try ブロックの残りの処理 (今回は "(2) No exception" の
+出力) は飛ばされ、制御は対応する catch 句に移る。投げられた Exception は
+"catch (Exception e)" にマッチするので、まず "(2) Exception occurred" が出力される。
+catch ブロックの実行が終わると、finally 句は必ず実行される規則に従って
+"(2) in finally clause" が続けて出力される。その後 while ループの次の反復に進む。
+
+
+質問2: なぜプログラムは下記の行を出力するのか?
+(break 文があるため出力されないように見えるが)
+(3) in finally clause
+
+解答:
+count が 3 になったとき "if (count == 3) break;" の条件が成立し break が実行される。
+ただし finally 句は対応する try ブロックから制御が抜けるあらゆる場合 (正常終了、
+例外、break、continue、return) で必ず実行されるという仕様がある。したがって
+break による while からの脱出が実際に行われる前に finally 句が走り、
+"(3) in finally clause" が出力される。これがまさに finally の役割であり、
+break や return によって後始末コードが意図せずスキップされるのを防ぐ仕組み。
+
+
+質問3: なぜプログラムは下記の行を出力するのか?
+Main program ends.
+
+解答:
+"(3) in finally clause" が出力された後、保留されていた break が効力を持ち
+while ループが終了する。続いてループ直後の文
+"System.out.println(\"Main program ends.\");" が実行されるため
+"Main program ends." が出力され、main メソッドは正常に return する。

@@ -1,6 +1,9 @@
-# TOEFL 攻略ガイド（クロード作成・2026年新形式対応）
+# TOEFL 攻略ガイド
 
 作成日: 2026-04-25
+統合日: 2026-05-30
+
+注: 旧 `learning-os` から統合した内容。TOEFLの形式・日程・教材情報は変わる可能性があるため、実際に受験計画を立てる時は公式情報で確認する。
 
 ---
 
@@ -56,6 +59,11 @@
 - Academic Talk（45〜120秒の講義）
 
 **攻略の鍵**：音声変化（リンキング・リダクション・フラッピング）を理解してから精聴・シャドーイング。
+
+Listening restart resources:
+
+- `english/toefl-prep/listening-resources.md`
+- Start with VOA Learning English, then BBC 6 Minute English, then Crash Course Psychology / Computer Science.
 
 ### Reading（3タイプ）
 
