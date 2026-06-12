@@ -39,6 +39,21 @@
 
 Exercise 1はER diagramの入口になる可能性が高い。
 
+確認済み:
+
+- 提出期限: 2026-06-18 Thu 23:55
+- 課題PDF: `exercises/exercise-01/IDM-Exercise-ER-modeling.pdf`
+- 課題メモ: `exercises/exercise-01/exercise-01-er-modeling.md`
+- Task 2 Problem A案: `exercises/exercise-01/problem-a-personal-task-management.md`
+
+提出zipに必要なもの:
+
+1. Task 1の拡張academic-er diagram XML
+2. Task 1のPNG画像
+3. Task 2のER diagram XML file(s)
+4. Task 2のdiagram画像
+5. Task 2のbrief description document、PDF推奨
+
 英文を読んだら、次の順で考える。
 
 ```text
